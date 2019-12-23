@@ -1,12 +1,21 @@
-import React from 'react'
-import FirstPart from './components/firstpart'
-import SecondPart from './components/secondpart'
+import React, { Component } from 'react';
 
-export default function App() {
-  return (
-    <div>
-      <FirstPart/>
-      {/* <SecondPart /> */}
-    </div>
-  )
+import Posts from './components/posts';
+import Counter from './components/counter';
+
+export class App extends Component {
+  render() {
+    return (
+      
+      <div>
+        <h1>Reselect Redux</h1>
+        <Posts />
+        <Counter />
+      </div>
+      
+    )
+  }
 }
+
+export default App
+

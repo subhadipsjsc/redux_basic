@@ -3,30 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {createStore, combineReducers} from 'redux'
 import {Provider} from 'react-redux';
-
-import userReducer from './redux-elements/reducers/userReducer';
-import productReducer from './redux-elements/reducers/productReducer';
-import shopReducer from './redux-elements/reducers/shopReducer'
-
-const rootreducer = combineReducers({
-    user : userReducer,
-    products : productReducer,
-    shop : shopReducer
-}) 
+import store from './redux-elements/store'
 
 
-const store = createStore(
-    rootreducer, 
-    // initialState,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+
+
 
 // store.subscribe(()=>{
-//     console.log(JSON.stringify(store.getState()))
+//     console.log(store.getState())
 // })
 
+console.log(store.getState())
 
 ReactDOM.render(
     <Provider store={store}>   <App/> </Provider>, 
