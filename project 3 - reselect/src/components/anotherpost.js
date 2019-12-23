@@ -1,23 +1,30 @@
+import React, { Component } from 'react'
+import {connect} from 'react-redux'
 
-
-class Posts extends React.Component {
-    render() {
-      console.log(`Posts render ${++count}`);
-      return (
-        <div>
-          <h3>Posts</h3>
-          <ul>
-            {this.props.posts.map ( (x,index) => {
-            return(<li key ={index}> {x} </li>)
-            })}
-          </ul>
-        </div>
-      );
-    }
+export class anotherpost extends Component {
+  render() {   
+    return (
+      <div>
+        <h3>Posts</h3>
+        <ul>
+          {this.props.posts.map ( (x,index) => {
+            return(<li key ={index}> {JSON.stringify(x)} </li>)
+          })}
+        </ul>
+      </div>
+    );
+  }
 }
 
-const mapState = (state) => {
+const mapState = (state) => {  
   return({
     posts : state.postListing
   })
 }
+
+export default connect(mapState) (anotherpost);
+
+
+
+
+
